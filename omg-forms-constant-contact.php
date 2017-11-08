@@ -17,4 +17,4 @@ require_once OMG_FORMS_CC_DIR . '/includes/validation.php';
 require_once OMG_FORMS_CC_DIR . '/includes/helpers.php';
 require_once OMG_FORMS_CC_DIR . '/includes/settings.php';
 
-\OMGForms\Mailchimp\Settings\setup();
+\OMGForms\CC\Settings\setup();
