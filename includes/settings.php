@@ -17,7 +17,16 @@ function display_cc_setting_fields() {
 		'section'
 	);
 
+	add_settings_field(
+		'cc_api_token',
+		'Constant Contact API Token',
+		__NAMESPACE__ . '\display_cc_token_element',
+		'cc_options',
+		'section'
+	);
+
 	register_setting( 'cc-section', 'cc_api_key' );
+	register_setting( 'cc-section', 'cc_api_token' );
 
 }
 
@@ -29,6 +38,17 @@ function display_cc_key_element() {
 		name="cc_api_key"
 		value="<?php echo get_option( 'cc_api_key' ); ?>"
 	/>
+	<?php
+}
+
+function display_cc_token_element() {
+	?>
+    <input
+            type="text"
+            size="55"
+            name="cc_api_token"
+            value="<?php echo get_option( 'cc_api_token' ); ?>"
+    />
 	<?php
 }
 
