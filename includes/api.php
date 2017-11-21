@@ -98,4 +98,4 @@ function save_form_as_constant_contact( $args, $form ) {
 	return $args;
 }
 
-add_filter( 'omg_forms_save_data', __NAMESPACE__ .  '\save_form_as_constant_contact', 10, 3 );
+add_filter( 'omg_forms_save_data', __NAMESPACE__ .  '\save_form_as_constant_contact', 10, 2 );
