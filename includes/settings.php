@@ -2,31 +2,30 @@
 namespace OMGForms\CC\Settings;
 
 function setup() {
-	add_action( 'omg-form-settings-hook', __NAMESPACE__ . '\register_form_settings' );
 	add_action( 'admin_init', __NAMESPACE__ . '\display_cc_setting_fields' );
 }
 
 function display_cc_setting_fields() {
-	add_settings_section( 'section', esc_html__( 'Constant Contact Settings' ), null, 'cc_options' );
+	add_settings_section( 'cc-section', esc_html__( 'Constant Contact Settings' ), null, 'form_settings' );
 
 	add_settings_field(
 		'cc_api_key',
 		'Constant Contact API Key',
 		__NAMESPACE__ . '\display_cc_key_element',
-		'cc_options',
-		'section'
+		'form_settings',
+		'cc-section'
 	);
 
 	add_settings_field(
 		'cc_api_token',
 		'Constant Contact API Token',
 		__NAMESPACE__ . '\display_cc_token_element',
-		'cc_options',
-		'section'
+		'form_settings',
+		'cc-section'
 	);
 
-	register_setting( 'cc-section', 'cc_api_key' );
-	register_setting( 'cc-section', 'cc_api_token' );
+	register_setting( 'omg-forms-section', 'cc_api_key' );
+	register_setting( 'omg-forms-section', 'cc_api_token' );
 
 }
 
@@ -50,9 +49,4 @@ function display_cc_token_element() {
             value="<?php echo get_option( 'cc_api_token' ); ?>"
     />
 	<?php
-}
-
-function register_form_settings() {
-	settings_fields( 'cc-section' );
-	do_settings_sections( 'cc_options' );
 }
