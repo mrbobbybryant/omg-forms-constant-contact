@@ -1,7 +1,7 @@
 <?php
 
 if ( !defined( 'OMG_FORMS_CC_VERSION' ) ) {
-	define( 'OMG_FORMS_CC_VERSION', '0.4.0' );
+	define( 'OMG_FORMS_CC_VERSION', '0.5.0' );
 }
 
 if ( !defined( 'OMG_FORMS_CC_DIR' ) ) {
